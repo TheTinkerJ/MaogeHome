@@ -8,7 +8,7 @@ export interface TradeFlowRecordDO{
     /**
      * 交易流水时间
      */
-    trade_date:Date|null
+    trade_date: string
     /**
      * 交易流水花销(分)
      */
@@ -27,7 +27,7 @@ export interface TradeFlowRecordDO{
     user_name:string
 }
 
-export async function insertTradeFlowRecord(){
+export async function insertTradeFlowRecord(tradeRecord:TradeFlowRecordDO){
     let mysqlconn = await getMysqlConnFn()
     let sql = "INSERT INTO `trade_flow_record`"
         + "(`trade_no`,`trade_date`,`trade_amount`,`trade_cat`,`trade_desc`,`user_name`)"
@@ -35,6 +35,13 @@ export async function insertTradeFlowRecord(){
     
         await mysqlconn.query(
             sql,
-            ["1","2023-02-01 08:00:00",11,"测试","测试","测试"]
+            [
+                tradeRecord.trade_no,
+                tradeRecord.trade_date,
+                tradeRecord.trade_amount,
+                tradeRecord.trade_cat,
+                tradeRecord.trade_desc,
+                "maoge"
+            ]
         )
 }
