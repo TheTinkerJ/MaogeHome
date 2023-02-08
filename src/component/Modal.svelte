@@ -79,7 +79,7 @@
 		background: white;
 	}
 
-	button {
+	.button {
 		display: block;
 	}
 </style>
