@@ -21,7 +21,7 @@ export async function queryTradeFlowPage(params:ITradeFlowRecordPageRequest) {
     let start = params.page*params.pageSize;
     let offset = params.pageSize;
 
-    let querySql = `SELECT * FROM trade_flow_record limit ${start},${offset}`;
+    let querySql = `SELECT * FROM trade_flow_record limit ${start},${offset} order by modified_time desc`;
         
     let mysqlconn = await getMysqlConnFn()
     let records:ITradeFlowRecord[] = await mysqlconn
