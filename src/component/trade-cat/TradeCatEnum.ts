@@ -48,6 +48,7 @@ export namespace TradeCat {
     FW_WANGFEI: { content: "服务-网费", cat: "服务", view: "网费", code: "FW_WANGFEI" },
     FW_HUAFEI: { content: "服务-话费", cat: "服务", view: "话费", code: "FW_HUAFEI" },
     FW_HUIYUAN: { content: "服务-会员", cat: "服务", view: "会员", code: "FW_HUIYUAN" },
+    FW_JIEHUAN: { content: "服务-借还", cat: "服务", view: "借还", code: "FW_JIEHUAN" },
   }
 
   export const CatConfigs: ITradeCatCfg[] = [
@@ -78,5 +79,6 @@ export namespace TradeCat {
     { cat: "服务", code: "网费" },
     { cat: "服务", code: "话费" },
     { cat: "服务", code: "会员" },
+    { cat: "服务", code: "借还" },
   ]
 }
